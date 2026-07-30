@@ -1,0 +1,3 @@
+# NOTES
+
+## Week 1

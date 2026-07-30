@@ -1,0 +1,19 @@
+# Project: Moodle Digital Twin
+
+## Stack
+- Backend: FastAPI + SQLAlchemy, async routes
+- DB: PostgreSQL (or SQLite for local dev)
+- Moodle access: Web Services REST API only — no direct DB access unless explicitly told otherwise
+- ML: XGBoost, scikit-learn
+- Frontend: Streamlit
+- LLM layer: Groq API
+
+## Conventions
+- All Moodle API responses validated through Pydantic schemas before use
+- Never assume a Moodle Web Service function exists from memory — verify against the enabled-function list I provide
+- No raw SQL outside a dedicated data-access layer
+- Time-respecting train/test splits only — never randomly shuffle time-series student data
+- Write-back/messaging logic must live in an isolated `sandbox/` module, never in the main pipeline
+
+## Current phase
+Local Moodle instance via Docker. Real university access not yet granted. All work targets local instance, config swappable to production via env vars only.
