@@ -10,6 +10,7 @@ class EnrolledUser(BaseModel):
     lastname: str
     fullname: str
     email: str
+    roles: list[dict] = []
 
 
 class GradeItem(BaseModel):
