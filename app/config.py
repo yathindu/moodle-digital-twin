@@ -11,6 +11,7 @@ class Settings(BaseSettings):
     moodle_base_url: str
     moodle_token: str
     database_url: str = "sqlite:///./dev.db"
+    groq_api_key: str | None = None
 
     model_config = SettingsConfigDict(env_file=".env", env_file_encoding="utf-8")
 
